@@ -12,7 +12,7 @@ contract Nftease {
     uint id;
     uint price;
     uint timestamp;
-    address asset_holder;
+    address payable asset_holder;
   }
   constructor() public {
     counter =0;
@@ -26,6 +26,12 @@ contract Nftease {
 
   function listasset() public view returns(asset[] memory){
     return allassets;
+  }
+
+    function buyasset(uint ind) public payable {
+    require(msg.value >= allassets[ind].price);
+    (allassets[ind].asset_holder).transfer(msg.value);
+    allassets[ind].asset_holder = msg.sender;
   }
 
   
