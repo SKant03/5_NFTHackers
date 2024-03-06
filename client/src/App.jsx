@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import bu from './assets/bu.svg' 
+import gaming from './assets/gaming.svg'
 import React from 'react';
 import logo from './assets/logo.png';
 import search from './assets/search.svg';
@@ -8,21 +10,32 @@ import button from './assets/button.svg';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Button from '@mui/material/Button';
+import photo from './assets/photo.svg'
+import music from './assets/music.svg'
+import art from './assets/art.jpeg' 
+import filter from './assets/filter.svg' 
+import img1 from './assets/img1.jpg'
+import img2 from './assets/img2.jpeg'
+import img3 from './assets/img3.jpg'
+import img4 from './assets/img4.jpeg'
 // import Modal from './Modal';
 import './App.css';
+import { blue } from '@mui/material/colors';
 const style = {
+  outline:'none',
   position: 'absolute',
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
   width: 500,
   height:400,
-  bgcolor: 'background.paper',
+  bgcolor: 'white',
   display:'flex',
   justifyContent:'space-around',
   flexDirection:'column',
   alignItems:'center'
-  ,borderRadius:7
+  ,borderRadius:7,
+  
 };
 
 
@@ -121,14 +134,14 @@ const[assets,setAssets]=useState(0);
 
 
   return (
-<div style={{height:'100%', width:"100%",display:'flex',flexDirection:'column',backgroundColor:'#03151B',gap:'7rem'}} >
+<div style={{height:'100%', width:"100%",display:'flex',flexDirection:'column',backgroundColor:'#03151B'}} >
 
 
 <div className='nav' style={{ height:'10%',display:'flex',justifyContent:'space-around',alignItems:'center', marginTop:'1%'}}>
 
 
  <img src={logo}  width={'6%'} />
-  <div className='nav' style={{backgroundColor:'white',height:'50%',width:'30%',borderRadius:25,display:'flex',alignItems:'center', marginLeft:"13%"}}>
+  <div className='nav' style={{backgroundColor:'white',height:'50px',width:'30%',borderRadius:25,display:'flex',alignItems:'center', marginLeft:"13%"}}>
    <img src={search} alt="" srcset="" style={{width:'7%',marginLeft:'4%'}}  />
    <input placeholder='Search' style={{outline:'none',borderColor:'transparent',fontSize:20}}>
    </input>
@@ -147,7 +160,7 @@ const[assets,setAssets]=useState(0);
   </div>
   </div>
 </div>
-<div className='middle' style={{display:'flex',justifyContent:'center',flexDirection:'column',alignItems:'center'}}>
+<div className='middle' style={{display:'flex',justifyContent:'center',flexDirection:'column',alignItems:'center',marginTop:'9%'}}>
   <p className='paragraph'>
   WANT to CREATE NFT’s?    
   </p>
@@ -233,8 +246,95 @@ try a new way to create nft</p>
         </Box>
       </Modal>
     </div>
+    <div style={{width:'100%', height:'10%',display:'flex',flexDirection:'column',gap:'2rem',alignItems:'center'}}>
+    <div className="bottom-button-div"style={{display:'flex',justifyContent:'space-around',width:'80%'}}>
+      <img src={bu} alt="" /> 
+      <img src={gaming}  alt="" /> 
+      <img src={photo} alt="" />
+      <img src={music} alt="" />  
+      </div>
+   
+    <div className='art-images' style={{display:'flex',justifyContent:'center',width:'100%'}}>
+<img src={art} style={{width:'90%',height:'500px',borderRadius:50}} alt="" />
+    </div> 
+    
+    </div>
+
+    <div >
+      <img src={filter} style={{marginLeft:'15%'}}alt="" />
+    </div>
+
+
+    <div style={{display:'flex',margin:'0 13%', justifyContent:'space-between'}}>
+      <p style={{color:'white',fontFamily:'sans-serif',fontSize:'25px'}}>NEWEST</p>
+      <p style={{color:'white',fontFamily:'sans-serif',fontSize:'25px'}}>PRICE</p>
+    </div>
+    
+    <div className = 'BIG' style={{display:'flex',justifyContent:'space-between',margin:'0 11%', color:'white', fontFamily:'sans-serif', fontSize:'25px', flexDirection: 'row', marginBottom:'1%'}}>
+      <div style={{display:'flex',flexDirection:'row'}} >
+        <p style={{marginRight:"10%"}}>1.</p>
+        <img src={img1} width={'100px'} alt="" />
+      </div>
+      <div>
+        <p >
+          Discription
+        </p>
+      </div>
+      <div>
+        <p>0.23E</p>
+      </div>
+   
+    </div>
+   
+    <div className = 'BIG' style={{display:'flex',justifyContent:'space-between',margin:'0 11%', color:'white', fontFamily:'sans-serif', fontSize:'25px', flexDirection: 'row', marginBottom:'1%'}}>
+      <div style={{display:'flex',flexDirection:'row'}} >
+        <p style={{marginRight:"10%"}}>2.</p>
+        <img src={img2} width={'90px'} alt="" />
+      </div>
+      <div>
+        <p >
+          Discription
+        </p>
+      </div>
+      <div>
+        <p>0.25E</p>
+      </div>
+   
+    </div>
+
+<div className = 'BIG' style={{display:'flex',justifyContent:'space-between',margin:'0 11%', color:'white', fontFamily:'sans-serif', fontSize:'25px', flexDirection: 'row', marginBottom:'1%'}}>
+      <div style={{display:'flex',flexDirection:'row'}} >
+        <p style={{marginRight:"10%"}}>3.</p>
+        <img src={img3} width={'100px'} alt="" />
+      </div>
+      <div>
+        <p >
+          Discription
+        </p>
+      </div>
+      <div>
+        <p>0.30E</p>
+      </div>
+   
+    </div>
+  
+    <div className = 'BIG' style={{display:'flex',justifyContent:'space-between',margin:'0 11%', color:'white', fontFamily:'sans-serif', fontSize:'25px', flexDirection: 'row', marginBottom:'1%'}}>
+      <div style={{display:'flex',flexDirection:'row'}} >
+        <p style={{marginRight:"10%"}}>4.</p>
+        <img src={img1} width={'100px'} alt="" />
+      </div>
+      <div>
+        <p >
+          Discription
+        </p>
+      </div>
+      <div>
+        <p>0.27E</p>
+      </div>
+   
+    </div>
 </div>
-  )
+  ) 
 }
 
 export default App
