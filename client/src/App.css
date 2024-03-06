@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+.paragraph{
+  font-family: "Inter", sans-serif;
+  font-style: italic;
+  color: white;
+  font-size: 70px;
+  font-weight: 700;
+  margin: auto;
+
+}
