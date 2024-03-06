@@ -129,7 +129,12 @@ const[assets,setAssets]=useState(0);
 
     init();
   }, []);
+  const [selectedOption, setSelectedOption] = useState('Date');
 
+  // Function to handle option changes
+  const handleOptionChange = (event) => {
+    setSelectedOption(event.target.value);
+  }
 
 
 
@@ -260,8 +265,16 @@ try a new way to create nft</p>
     
     </div>
 
-    <div >
-      <img src={filter} style={{marginLeft:'15%'}}alt="" />
+    <div style={{marginTop:'2%',marginLeft:'13%'}} >
+    
+      <div>
+
+      <select style={{backgroundColor:"#AD9D9D",opacity:0.7,color:'white',fontSize:'20px',borderRadius:7,padding:5,fontWeight:700,outline:'none'}} value={selectedOption} onChange={handleOptionChange}>
+        <option value="Date">DATE</option>
+        <option value="Week">WEEK</option>
+        <option value="Month">MONTH</option>
+        <option value="Year">YEAR</option>
+      </select></div>
     </div>
 
 
@@ -332,6 +345,35 @@ try a new way to create nft</p>
         <p>0.27E</p>
       </div>
    
+    </div>
+
+    <div className='Footer' style={{backgroundColor:'transparent',height:'300px',display:'flex',justifyContent:'space-around',borderTop:'1px solid white',marginTop:'7%'}}>
+    <div style={{color:'white',fontFamily:'sans-serif',fontWeight:500,display:'flex',justifyContent:'space-around',flexDirection:'column'}}>
+      <p>Marketplace</p>
+      <p>Art</p>
+      <p>Gaming</p>
+      <p>Memberships</p>
+      <p>Music</p>
+      <p>Photography</p>
+    </div>
+    <div style={{color:'white',fontFamily:'sans-serif',fontWeight:500,display:'flex',justifyContent:'space-around',flexDirection:'column'}}>
+      <p>My Account</p>
+      <p>Profile</p>
+      <p>Favourites</p>
+      <p>Settings</p>
+      <p>NFTease Pro</p>
+
+    </div>
+    <div style={{color:'white',fontFamily:'sans-serif',fontWeight:500,display:'flex',justifyContent:'space-around',flexDirection:'column'}}>
+      <p>Resources</p>
+      <p>blog</p>
+      <p>Learn</p>
+      <p>Help Center</p>
+      <p>Community Standards</p>
+
+    </div>
+    
+
     </div>
 </div>
   ) 
