@@ -18,7 +18,7 @@ truffle compile <br>
 truffle migrate --reset <br>
 
 * cd client
-* npm dev run
+* npm run dev
 
 ##### Description
 
