@@ -40,42 +40,86 @@ function App() {
     contract: null,
   });
   const [data, setData] = useState("nill");
-  useEffect(() => {
-    const provider = new Web3.providers.HttpProvider("HTTP://127.0.0.1:7545");
 
+  const provider = new Web3.providers.HttpProvider("HTTP://127.0.0.1:7545");
     async function template() {
       const web3 = new Web3(provider);     //object of web3
       const networkId = await web3.eth.net.getId();    //getting network id
       const deployedNetwork = Nftease.networks[networkId];          //getting contracts address
-      const contract = new web3.eth.Contract(     //instance of the contract
+      const contract1 = new web3.eth.Contract(     //instance of the contract
         Nftease.abi,
         deployedNetwork.address
       );
-      console.log(contract);
-      setState({ web3: web3, contract: contract });   //setting values in state
+      console.log("C!",contract1);
+      setState({ web3, contract: contract1});  
+      const temp1 = state;
+      console.log(temp1);
+       //setting values in state
     }
+
+  console.log("state",state)
+  useEffect(()=>{
     provider && template();
-  }, []);
+   },[])
 
-
-  async function minting(){
+ 
+  async function minting(event){
+    getCounter();
+    event.preventDefault();
     const {contract} = state;
     await contract.methods.mint(name, description, url, price).send({from:"0x6F84d83f6D754C6cE7400914555Eb77B72CFa5c3"});
-    window.location.reload();
+   
   }
-
+const[assets,setAssets]=useState(0);
   async function getCounter() {
-    const counterValue = await Contract.methods.counter().call();
-    console.log('Counter Value:', counterValue);
+    const {contract} = state;
+    console.log("raeched")
+     const temp= await contract.methods.counterval().call();
+     setAssets(temp)
+    console.log('Counter Value:', assets);
     // Update your React component state or UI with the counter value
   }
-  
+  useEffect
   const[name,setName]=useState("")
   const[description,setDescription]=useState("")
   const[url,setUrl]=useState("")
   const[price,setPrice]=useState("")
 
   console.log(price)
+
+
+  
+  //metamask//
+  const [web3, setWeb3] = useState(null);
+  const [accounts, setAccounts] = useState([]);
+
+  useEffect(() => {
+    async function init() {
+      // Check if MetaMask is installed
+      if (window.ethereum) {
+        const web3Instance = new Web3(window.ethereum);
+        setWeb3(web3Instance);
+
+        try {
+          // Request access to accounts
+          await window.ethereum.request({ method: 'eth_requestAccounts' });
+          // Get the user's accounts
+          const accs = await web3Instance.eth.getAccounts();
+          setAccounts(accs);
+        } catch (error) {
+          console.error('User denied account access');
+        }
+      } else {
+        console.error('MetaMask not found');
+      }
+    }
+
+    init();
+  }, []);
+
+
+
+
   return (
 <div style={{height:'100%', width:"100%",display:'flex',flexDirection:'column',backgroundColor:'#03151B',gap:'7rem'}} >
 

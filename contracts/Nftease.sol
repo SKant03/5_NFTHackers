@@ -3,7 +3,7 @@ pragma solidity >=0.5.0 <0.9.0;
 pragma experimental ABIEncoderV2;
 
 contract Nftease {
-  uint public counter;
+  uint256 public counter;
   asset[] allassets;
   struct asset{
     string name;
@@ -34,7 +34,7 @@ contract Nftease {
     allassets[ind].asset_holder = msg.sender;
   }
 
-  function counterval() public view returns(uint){
+  function counterval() public view returns(uint256){
     return counter;
   }
 
