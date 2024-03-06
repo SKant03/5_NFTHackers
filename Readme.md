@@ -13,9 +13,9 @@ open ganache and keep it running in background
 ###### Starting 
 
 * open cli in the repo
-* follow the command 
-truffle compile
-truffle migrate --reset
+* follow the command <br>
+truffle compile <br>
+truffle migrate --reset <br>
 
 * cd client
 * npm dev run
