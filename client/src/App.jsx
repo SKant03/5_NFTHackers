@@ -9,14 +9,14 @@ function App() {
 
   
   return (
-<div style={{height:'800px',display:'flex',flexDirection:'column',backgroundColor:'#03151B',gap:'7rem'}} >
+<div style={{height:'100%', width:"100%",display:'flex',flexDirection:'column',backgroundColor:'#03151B',gap:'7rem'}} >
 
 
-<div className='nav' style={{ height:'10%',display:'flex',justifyContent:'space-between',alignItems:'center',marginTop:'2%'}}>
+<div className='nav' style={{ height:'10%',display:'flex',justifyContent:'space-around',alignItems:'center', marginTop:'1%'}}>
 
 
- <img src={logo}  width={'15%'} />
-  <div className='nav' style={{backgroundColor:'white',height:'50%',width:'32%',borderRadius:25,display:'flex',alignItems:'center'}}>
+ <img src={logo}  width={'6%'} />
+  <div className='nav' style={{backgroundColor:'white',height:'50%',width:'30%',borderRadius:25,display:'flex',alignItems:'center', marginLeft:"13%"}}>
    <img src={search} alt="" srcset="" style={{width:'7%',marginLeft:'4%'}}  />
    <input placeholder='Search' style={{outline:'none',borderColor:'transparent',fontSize:20}}>
    </input>
@@ -45,7 +45,7 @@ function App() {
   <p style={{color:'white',fontFamily:'sans-serif',margin:'auto',fontSize:'30px'}}> 
 try a new way to create nft</p>
 
-<img style={{marginTop:'5%'}} src={button}  width={'20%'} alt="" srcset="" />
+<img style={{marginTop:'5%',marginBottom:"5%"}} src={button}  width={'20%'} alt="" srcset="" />
 
 
 </div>
